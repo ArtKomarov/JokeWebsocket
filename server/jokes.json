@@ -1,0 +1,13 @@
+[
+  { "id": 1, "joke": "Why did the chicken cross the road?" },
+  { "id": 2, "joke": "Knock knock." },
+  { "id": 3, "joke": "What do you call a bear with no teeth? A gummy bear." },
+  {
+    "id": 4,
+    "joke": "I told my computer I needed a break, and it said \"No problem, I'll go to sleep.\""
+  },
+  {
+    "id": 5,
+    "joke": "Did you hear about the two people who stole a calendar? They each got six months."
+  }
+]
