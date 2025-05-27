@@ -43,8 +43,8 @@ This project consists of two components communicating over WebSockets:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/joke-websocket.git
-    cd joke-websocket
+    git clone https://github.com/ArtKomarov/JokeWebsocket.git
+    cd JokeWebsocket
     ```
 
 2. Create and activate a virtual environment:

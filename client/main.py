@@ -11,7 +11,7 @@ MAX_TASKS = 5
 async def handle_translation(joke, websocket):
     try:
         translated = await translator.translate_to_german(joke["joke"])
-        print(f"[Client] Translated: {translated}")
+        print(f"[Client] Translated joke {joke['id']}: {translated}")
         response = {
             "id": joke["id"],
             "translated_joke": translated
@@ -29,7 +29,7 @@ async def receive_and_translate():
             while True:
                 raw = await websocket.recv()
                 joke = json.loads(raw)
-                print(f"[Client] Received: {joke['joke']}")
+                print(f"[Client] Received joke {joke['id']}: {joke['joke']}")
 
                 task = asyncio.create_task(handle_translation(joke, websocket))
                 translation_tasks.add(task)
