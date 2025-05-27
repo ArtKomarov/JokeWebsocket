@@ -28,13 +28,7 @@ This project consists of two components communicating over WebSockets:
 
 ## Requirements
 
-- Python 3.9+
-- FastAPI
-- Uvicorn
-- websockets
-- google-cloud-translate (if using Google Translate)
-- google-genai (if using Gemini)
-- python-dotenv (for managing API keys)
+Check `requirements.txt`.
   
 ---
 
