@@ -60,22 +60,12 @@ This project consists of two components communicating over WebSockets:
     pip install -r requirements.txt
     ```
 
-4. Prepare your API keys:
-
-    - For Google Translate, set up Google Cloud Translate credentials and export `GOOGLE_APPLICATION_CREDENTIALS` environment variable pointing to your JSON key file.
-    - For Gemini API, create a `.env` file and add your key as `GEMINI_API_KEY=your_api_key_here`
-
-    Example `.env`:
-
-    ```bash
-    GEMINI_API_KEY=your_api_key_here
-    GOOGLE_APPLICATION_CREDENTIALS=your_key_file_path_here
-    ```
+4. Prepare your API keys (see below).
 
 5. Run the server:
 
     ```bash
-    uvicorn server.main:app --host 127.0.0.1 --port 8765 --reload
+    python -m uvicorn server.main:app --host 127.0.0.1 --port 8765 --reload
     ```
 
 6. Run the client:
@@ -83,3 +73,36 @@ This project consists of two components communicating over WebSockets:
     ```bash
     python client/main.py
     ```
+
+
+---
+
+## How to Get API Keys
+
+### Google Translate (`GOOGLE_APPLICATION_CREDENTIALS`)
+
+1. Create a project in [Google Cloud Console](https://console.cloud.google.com/).
+
+2. Enable **Cloud Translation API** for your project.
+
+3. Create a **Service Account** under **APIs & Services > Credentials**.
+
+4. Generate and download a **JSON key** for the service account.
+
+5. Set environment variable `GOOGLE_APPLICATION_CREDENTIALS` pointing to the JSON key file:
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS="/path/to/keyfile.json"
+   ```
+   Or add this line to your .env file.
+
+More info: [setup docs](https://cloud.google.com/translate/docs/setup)
+
+### Gemini API (`GEMINI_API_KEY`)
+
+1. [Get Gemini API key](https://ai.google.dev/gemini-api/docs/api-key) (may require requesting access).
+
+2. Set environment variable `GEMINI_API_KEY`:
+   ```bash
+   export GEMINI_API_KEY="your_api_key_here"
+   ```
+   Or add this line to your .env file.
